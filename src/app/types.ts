@@ -12,3 +12,12 @@ export type Vehicle = {
 export type Query = {
     allVehicles: Vehicle[];
 }
+
+ export type Column = {
+     field: string;
+     header: string;
+     sortable: boolean;
+     searchable: boolean;
+     colType: string;
+     searchType: string;
+ }

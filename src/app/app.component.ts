@@ -10,7 +10,6 @@ import { Vehicle, Query } from './types';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
   loading: boolean;
   vehicles: Vehicle[];
 

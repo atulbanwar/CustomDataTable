@@ -7,11 +7,15 @@ import {HttpLink, HttpLinkModule} from 'apollo-angular-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 
 import { AppComponent } from './app.component';
+import { DataTableComponent } from './data-table/data-table.component';
+import { DataColumnComponent } from './data-column/data-column.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DataTableComponent,
+    DataColumnComponent
   ],
   imports: [
     BrowserModule,
