@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
 
+import { Apollo } from 'apollo-angular';
+import gql from 'graphql-tag';
+import { Vehicle, Query } from './types';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,4 +11,31 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  loading: boolean;
+  vehicles: Vehicle[];
+
+  constructor(private apollo: Apollo) {}
+
+  ngOnInit() {
+    this.apollo.watchQuery<Query>({
+      query: gql`
+      query allVehicles  {
+        allVehicles {
+          id
+          make
+          model
+          year
+          package
+          fuelType
+          transmission
+          favorite
+        }
+      }
+    `})
+    .valueChanges
+    .subscribe(({ data, loading }) => {
+      this.loading = loading;
+      this.vehicles = data.allVehicles;
+    });
+  }
 }
