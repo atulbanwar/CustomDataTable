@@ -21,3 +21,8 @@ export type Query = {
      colType: string;
      searchType: string;
  }
+
+ export type SortColumn = {
+    field: string;
+    order: string;
+}

@@ -1,0 +1,36 @@
+table {
+  width: 100%;
+  border: 1px solid #dee2e6;
+}
+
+th, td{
+  overflow-wrap: break-word;
+  min-width: 100px;
+  max-width: 100px;
+  padding: 10px;
+  border: 1px solid #dee2e6;
+}
+
+th {
+  cursor: pointer;
+  border-bottom-width: 2px;
+}
+
+.header-search {
+  margin-top: 10px;
+}
+
+.header-sort {
+  display: flex !important;
+  position: relative !important;
+}
+
+.header-first-col {
+  flex: 1;
+}
+
+.header-col {
+  position: absolute;
+  right: 0;
+  top: 0;
+}

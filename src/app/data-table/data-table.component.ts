@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Column } from '../types';
+import { Column, SortColumn } from '../types';
 
 @Component({
   selector: 'data-table',
@@ -9,9 +9,14 @@ import { Column } from '../types';
 export class DataTableComponent implements OnInit {
   @Input() data: any[];
   columns: Array<Column>;
+  sortCol: SortColumn;
 
   constructor() { 
     this.columns = new Array<Column>();
+    this.sortCol = {
+      field: "",
+      order: ""
+    };
   }
 
   ngOnInit() {
