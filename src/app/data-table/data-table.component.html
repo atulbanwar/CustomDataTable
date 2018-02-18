@@ -18,12 +18,12 @@
             </div>
           </div>
           <div class="header-search">
-            <input type="text" class="form-control" placeholder="type to filter">
+            <input type="text" #searchStr class="form-control" placeholder="type to filter" *ngIf="column.searchable == true" (keyup)="updateSearchParams(column.field, searchStr.value)">
           </div>
         </th>
       </tr>
     </thead>
-    <tbody *ngFor="let row of data">
+    <tbody *ngFor="let row of data | filterRecords: searchParams">
       <tr>
         <td *ngFor="let column of columns">{{row[column.field]}}</td>
       </tr>
