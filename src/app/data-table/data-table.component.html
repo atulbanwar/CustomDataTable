@@ -3,21 +3,21 @@
     <thead>
       <tr>
         <th *ngFor="let column of columns"> 
-          <div class="header-sort">
-            <div #colName class="header-first-col">
+          <div class="header-sort" [ngClass]="{'clickable': column.sortable}" (click)="column.sortable && sort(column.field)">
+            <div class="header-first-col">
               {{column.header}}
             </div>
-            <div #icon1 class="header-col">
+            <div class="header-col" *ngIf="column.sortable == true && sortCol.field != column.field">
               <span class="fa fa-sort" style="color: #aaaaaa"></span>
             </div>
-            <div #icon2 class="header-col">
+            <div class="header-col" *ngIf="column.sortable == true && sortCol.field == column.field && sortCol.order == 'asc'">
               <span class="fa fa-sort-up"></span>
             </div>
-            <div #icon3 class="header-col">
+            <div class="header-col" *ngIf="column.sortable == true && sortCol.field == column.field && sortCol.order == 'des'">
               <span class="fa fa-sort-down"></span>
             </div>
           </div>
-          <div class="header-search" style="float: none">
+          <div class="header-search">
             <input type="text" class="form-control" placeholder="type to filter">
           </div>
         </th>

@@ -34,7 +34,8 @@ export class AppComponent {
     .valueChanges
     .subscribe(({ data, loading }) => {
       this.loading = loading;
-      this.vehicles = data.allVehicles;
+      // Creating deep copy of array to remove readonly property
+      this.vehicles = data.allVehicles.slice(0);
     });
   }
 }
