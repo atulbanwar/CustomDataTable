@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Column, SortColumn } from '../types';
+import { Column, SortColumn, SearchParameter } from '../types';
 
 @Component({
   selector: 'data-table',
@@ -10,6 +10,7 @@ export class DataTableComponent implements OnInit {
   @Input() data: any[] = [];
   columns: Array<Column>;
   sortCol: SortColumn;
+  searchParams: SearchParameter[] = [];
 
   constructor() { 
     this.columns = new Array<Column>();
@@ -90,5 +91,29 @@ export class DataTableComponent implements OnInit {
       }
       // Add condition for date if required.
     };
+  }
+
+  // Updating the list of search paramenters to filter rows
+  updateSearchParams(field: string, searchStr: string) {
+    // Prepare list of searchParams if empty
+    if (this.searchParams.length == 0) {
+      var column: any;
+      for (column of this.columns) {
+        if (column.searchable) {
+          this.searchParams.push({
+            field: column.field,
+            searchStr: ""
+          });
+        }
+      }
+    }
+
+    var para: any;
+    for (para of this.searchParams) {
+      if (para.field == field) {
+        para.searchStr = searchStr.trim().length != 0 ? searchStr.trim().toLowerCase() : "";
+        break;
+      }
+    }
   }
 }
