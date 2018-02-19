@@ -66,22 +66,16 @@ export class DataTableComponent implements OnInit {
         }
         return 0;
       } else if (typeof a[sortCol.field] == "boolean" && typeof b[sortCol.field] == "boolean") {
-        if (a[sortCol.field] == b[sortCol.field]) {
-          return 0;
-        }
-        if (sortCol.order == "asc") {
-          if (a[sortCol.field] == true && b[sortCol.field] == false) {
-            return -1;
-          } else if (a[sortCol.field] == true && b[sortCol.field] == false) {
-            return 1;
-          }
+        var x = a[sortCol.field].toString().toLowerCase();
+        var y = b[sortCol.field].toString().toLowerCase();
+        if (sortCol.order == "des") {
+          if (x < y) {return -1;}
+          if (x > y) {return 1;}
         } else {
-          if (a[sortCol.field] == true && b[sortCol.field] == false) {
-            return 1;
-          } else if (a[sortCol.field] == true && b[sortCol.field] == false) {
-            return -1;
-          }
+          if (x < y) {return 1;}
+          if (x > y) {return -1;}
         }
+        return 0;
       } else {
         // Default case
         if (sortCol.order == "asc") {
