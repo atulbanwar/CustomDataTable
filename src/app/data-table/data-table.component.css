@@ -52,3 +52,11 @@ th {
   color:#dee2e6;
   cursor: pointer;
 }
+
+.pagination-row {
+  text-align: center;
+}
+
+.pagination-row td {
+  padding: 10px 10px 0px 10px;
+}

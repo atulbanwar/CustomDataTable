@@ -11,6 +11,7 @@ export class DataTableComponent implements OnInit {
   columns: Array<Column>;
   sortCol: SortColumn;
   searchParams: SearchParameter[] = [];
+  currentPage: number = 1;
 
   constructor() { 
     this.columns = new Array<Column>();
