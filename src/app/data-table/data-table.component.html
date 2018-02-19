@@ -23,7 +23,7 @@
         </th>
       </tr>
     </thead>
-    <tbody *ngFor="let row of data | filterRecords: searchParams">
+    <tbody *ngFor="let row of data | filterRecords: searchParams | paginate: { itemsPerPage: 10, currentPage: currentPage }">
       <tr>
         <td *ngFor="let column of columns" [ngClass]="{'favorite-col': column.colType == 'favorite'}">
           <span *ngIf="column.colType == 'data'">
@@ -35,5 +35,12 @@
         </td>
       </tr>
     </tbody>
+    <tfoot class="pagination-row">
+      <tr>
+        <td [attr.colspan]="columns.length">
+          <pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
+        </td>
+      </tr>
+    </tfoot>
   </table>
 </div>

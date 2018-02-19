@@ -11,6 +11,7 @@ import { DataTableComponent } from './data-table/data-table.component';
 import { DataColumnComponent } from './data-column/data-column.component';
 import { FilterRecordsPipe } from './filter-records.pipe';
 
+import {NgxPaginationModule} from 'ngx-pagination'; 
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { FilterRecordsPipe } from './filter-records.pipe';
     BrowserModule,
     HttpClientModule,
     ApolloModule,
-    HttpLinkModule
+    HttpLinkModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
