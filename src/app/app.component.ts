@@ -35,7 +35,7 @@ export class AppComponent {
     .subscribe(({ data, loading }) => {
       this.loading = loading;
       // Creating deep copy of array to remove readonly property
-      this.vehicles = data.allVehicles.slice(0);
+      this.vehicles = JSON.parse(JSON.stringify(data.allVehicles))
     });
   }
 }

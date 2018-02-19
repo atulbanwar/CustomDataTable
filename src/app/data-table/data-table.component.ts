@@ -116,4 +116,9 @@ export class DataTableComponent implements OnInit {
       }
     }
   }
+
+  // To toggle favorite column value
+  toggleFavorite(row: any, field: string) {
+    row[field] = !row[field];
+  }
 }
