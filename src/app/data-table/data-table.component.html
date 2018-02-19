@@ -25,7 +25,14 @@
     </thead>
     <tbody *ngFor="let row of data | filterRecords: searchParams">
       <tr>
-        <td *ngFor="let column of columns">{{row[column.field]}}</td>
+        <td *ngFor="let column of columns" [ngClass]="{'favorite-col': column.colType == 'favorite'}">
+          <span *ngIf="column.colType == 'data'">
+              {{row[column.field]}}
+          </span>
+          <span *ngIf="column.colType == 'favorite'" (click)="toggleFavorite(row, column.field)">
+            <i class="fa fa-heart fa-2x" [ngClass]="{'favorite': row[column.field] == true, 'not-favorite': row[column.field] == false}"></i>
+          </span>
+        </td>
       </tr>
     </tbody>
   </table>
