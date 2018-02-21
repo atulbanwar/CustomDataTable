@@ -51,4 +51,10 @@ Specify custom data table using following syntax:
   - `[colType]` attribute is used to specify the type of column. The control supports two column type at this moment which is text and favorite. The text column-type will display data as it is, and favorite column-type accepts boolean data and shows heart icon in the table. This attribute could be used to create new columns type in future for e.g. a checkbox column to select a record.
   - `[searchType]` Attribute is used to specify the type of search which can be performed on the data of a column. Currently, it supports only text search. In future support for other types of search like a drop-down could be added.
 
+__Possible future updates__:
+- Support for more `[colTypes]` e.g. a checkbox column to select records.
+- Support for more `[searchType]` e.g. a simple/multi-select drop-down to filter records. Another example could be a support for an auto-search textbox.
+- Support for live CRUD operations.
+- Ability to gracefully handle any number of records e.g. a million records.
+
 __Contributors__: Atul Banwar
