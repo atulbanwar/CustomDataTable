@@ -4,6 +4,8 @@ __Duration__: Feb 2018
 
 __Description__: Custom Data Table is an HTML Table Control which is used to display records fetched from a database table. The control supports searching, sorting and pagination of records. All these options can be customized as per the user's needs.
 
+__Live Demo__: https://atulbanwar.github.io/CustomDataTable/
+
 __Technologies__: Angular 5, TypeScript, Bootstrap 4, Graphql, Apollo, HTML, CSS
 
 __Role__: Software Developer
