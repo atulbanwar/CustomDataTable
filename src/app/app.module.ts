@@ -31,7 +31,8 @@ import {NgxPaginationModule} from 'ngx-pagination';
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor(apollo: Apollo, httpLink: HttpLink) { 
+  constructor(apollo: Apollo, httpLink: HttpLink) {
+    // Connection to Graphql using Apollo
     apollo.create({
       link: httpLink.create({ uri: 'https://api.graph.cool/simple/v1/cjdrmmjke0o4z0192mn2xtzga' }),
       cache: new InMemoryCache()

@@ -16,6 +16,7 @@ export class AppComponent {
   constructor(private apollo: Apollo) {}
 
   ngOnInit() {
+    // Fetching vehicle records from Graphql using Apollo
     this.loading = true;
     this.apollo.watchQuery<Query>({
       query: gql`

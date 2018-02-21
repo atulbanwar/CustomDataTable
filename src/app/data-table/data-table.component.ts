@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Column, SortColumn, SearchParameter } from '../types';
 
+// DataTable component is the parent component for DataTable. It accepts the records to display in a table.
 @Component({
   selector: 'data-table',
   templateUrl: './data-table.component.html',

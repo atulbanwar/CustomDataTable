@@ -1,5 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
+// Pipe: This pipe is used to filter the records based on the search string.
 @Pipe({
   name: 'filterRecords',
   pure: false
