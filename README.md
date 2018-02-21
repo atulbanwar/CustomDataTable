@@ -41,7 +41,7 @@ Specify custom data table using following syntax:
   - `[data]` attribute is used to specify a datasource array of JSON objects.
   - `[isLoading]` attribute is used to pass a boolean variable to show/hide loader icon.
 
-- `<data-column>` tag is used to specify a column in a table. Use multiple `<data-table>` tags to specify multiple columns.
+- `<data-column>` tag is used to specify a column in a table. Use multiple `<data-column>` tags to specify multiple columns.
   - `[field]` attribute is used to specify column name field (as present in JSON object of records).
   - `[header]` attribute is used to specify column header name.
   - `[sortable]` attribute is used to specify whether a column is sortable or not. Accepts true/false value.
