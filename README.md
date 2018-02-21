@@ -1,27 +1,52 @@
-# CustomDataTable
+# Custom Data Table
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.0.
+__Duration__: Feb 2018
 
-## Development server
+__Description__: Custom Data Table is an HTML Table Control which is used to display records fetched from a database table. The control supports searching, sorting and pagination of records. All these options can be customized as per the user's needs.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+__Technologies__: Angular 5, TypeScript, Bootstrap 4, Graphql, Apollo, HTML, CSS
 
-## Code scaffolding
+__Role__: Software Developer
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+__Responsibilities__:
 
-## Build
+ - Design and implement a DataTable control which is:
+	 - reusable
+	 - allows reordering of column
+	 - allows adding/removing of columns
+	 - support different column types e.g. text, favorite
+	 - allows user to specify custom header
+	 - responsive
+- Design and implement sorting logic on columns. Allow the user to add/remove sorting feature from specific columns.
+- Design and implement searching logic on columns.  Allow the user to add/remove searching feature from specific columns.
+- Design and implement favorite column type.
+- Create a web application using Angular to display a live demo of datatable. The application will fetch data from Graphql API using Appolo.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+__Usage__:
 
-## Running unit tests
+Specify custom data table using following syntax:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+	 ```
+	 <data-table [data]=dataSourceArray [isLoading]=loadingBooleanVar>
+		 <data-column [field]="'column_name_in_datasource'" 
+		 [header]="'column_header'" 
+		 [sortable]=true/false [searchable]=true/false 
+		 [colType]="'data/favorite'" [searchType]="'Text'>
+		 </data-column>
+		 ...
+	</data-table>
+	```
 
-## Running end-to-end tests
+- `<data-table>` tag is used to specify a table control.
+  - `[data]` attribute is used to specify a datasource array of JSON objects.
+  - `[isLoading]` attribute is used to pass a boolean variable to show/hide loader icon.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+- `<data-column>` tag is used to specify a column in a table. Use multiple `<data-table>` tags to specify multiple columns.
+  - `[field]` attribute is used to specify column name field (as present in JSON object of records).
+  - `[header]` attribute is used to specify column header name.
+  - `[sortable]` attribute is used to specify whether a column is sortable or not. Accepts true/false value.
+  - `[searchable]` attribute is used to specify whether a column is searchable or not. Accepts true/false value.
+  - `[colType]` attribute is used to specify the type of column. The control supports two column type at this moment which is text and favorite. The text column-type will display data as it is, and favorite column-type accepts boolean data and shows heart icon in the table. This attribute could be used to create new columns type in future for e.g. a checkbox column to select a record.
+  - `[searchType]` Attribute is used to specify the type of search which can be performed on the data of a column. Currently, it supports only text search. In future support for other types of search like a drop-down could be added.
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+__Contributors__: Atul Banwar
