@@ -23,8 +23,15 @@
         </th>
       </tr>
     </thead>
-    <tbody *ngFor="let row of data | filterRecords: searchParams | paginate: { itemsPerPage: 10, currentPage: currentPage }">
+    <tbody>
       <tr>
+        <td [attr.colspan]="columns.length" *ngIf="isLoading" class="loader-icon">
+          <span>
+            <i class="fa fa-spinner fa-spin fa-2x"></i>
+          </span>
+        </td>
+      </tr>
+      <tr *ngFor="let row of data | filterRecords: searchParams | paginate: { itemsPerPage: 10, currentPage: currentPage }">
         <td *ngFor="let column of columns" [ngClass]="{'favorite-col': column.colType == 'favorite'}">
           <span *ngIf="column.colType == 'data'">
               {{row[column.field]}}

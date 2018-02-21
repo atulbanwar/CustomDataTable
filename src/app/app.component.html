@@ -3,7 +3,7 @@
     <h3>Custom Data Table</h3>
   </div>
   <div class="container-fluid">
-    <data-table [data]=vehicles>
+    <data-table [data]=vehicles [isLoading]=loading>
       <!--<data-column [field]="'id'" [header]="'ID'" [sortable]=true 
         [searchable]=true [colType]="'data'" [searchType]="'Text'"></data-column>-->
       <data-column [field]="'make'" [header]="'Make'" [sortable]=true 

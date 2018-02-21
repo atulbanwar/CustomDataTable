@@ -60,3 +60,8 @@ th {
 .pagination-row td {
   padding: 10px 10px 0px 10px;
 }
+
+.loader-icon {
+  text-align: center;
+  color: #bbb;
+}

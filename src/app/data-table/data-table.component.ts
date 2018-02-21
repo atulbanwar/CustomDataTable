@@ -8,6 +8,7 @@ import { Column, SortColumn, SearchParameter } from '../types';
 })
 export class DataTableComponent implements OnInit {
   @Input() data: any[] = [];
+  @Input() isLoading: boolean;
   columns: Array<Column>;
   sortCol: SortColumn;
   searchParams: SearchParameter[] = [];

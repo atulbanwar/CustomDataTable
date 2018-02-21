@@ -16,6 +16,7 @@ export class AppComponent {
   constructor(private apollo: Apollo) {}
 
   ngOnInit() {
+    this.loading = true;
     this.apollo.watchQuery<Query>({
       query: gql`
       query allVehicles  {
