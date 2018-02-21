@@ -28,16 +28,14 @@ __Usage__:
 
 Specify custom data table using following syntax:
 
-	 ```
-	 <data-table [data]=dataSourceArray [isLoading]=loadingBooleanVar>
+	 ```<data-table [data]=dataSourceArray [isLoading]=loadingBooleanVar>
 		 <data-column [field]="'column_name_in_datasource'" 
 		 [header]="'column_header'" 
 		 [sortable]=true/false [searchable]=true/false 
 		 [colType]="'data/favorite'" [searchType]="'Text'>
 		 </data-column>
 		 ...
-	</data-table>
-	```
+	</data-table>```
 
 - `<data-table>` tag is used to specify a table control.
   - `[data]` attribute is used to specify a datasource array of JSON objects.
